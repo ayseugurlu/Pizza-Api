@@ -58,8 +58,19 @@ app.all('/', (req,res) => {
     })
 })
 
-//user
-app.use('/user', require('./src/routes/user'))
+//users
+app.use('/users', require('./src/routes/user'))
+
+//auth
+app.use('/auth', require('./src/routes/auth'))
+
+//token
+app.use('/tokens', require('./src/routes/token'))
+
+//toppings
+app.use('/toppings', require('./src/routes/topping'))
+
+
 
 
 /*------------------------------------------------------*/
