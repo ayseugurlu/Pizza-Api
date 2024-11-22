@@ -18,4 +18,10 @@ router.use('/tokens', require('./token'))
 //toppings
 router.use('/toppings', require('./topping'))
 
+//pizzas
+router.use('/pizzas', require('./pizza'))
+
+//orders
+router.use('/orders', require('./order'))
+
 module.exports = router

@@ -1,6 +1,5 @@
 'use strict'
 
-"use strict";
 
 const Topping = require('../models/topping')
 
@@ -63,7 +62,7 @@ module.exports = {
                 #swagger.summary = "Update Topping"
             */
         
-        const result = await Topping.updateOne({_id:req.params.id})
+        const result = await Topping.updateOne({_id:req.params.id}, req.body, {runValidators:true})
 
         res.status(202).send({
             error:false,

@@ -61,7 +61,7 @@ module.exports = {
                 #swagger.summary = "Update Token"
             */
         
-        const result = await Token.updateOne({_id:req.params.id})
+        const result = await Token.updateOne({_id:req.params.id}, req.body, {runValidators:true})
 
         res.status(202).send({
             error:false,
