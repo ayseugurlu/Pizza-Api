@@ -37,6 +37,17 @@ module.exports = {
         let {toppingIds} =req.body
         req.body.toppingIds = [ ...new Set(toppingIds)] // set bu dizideki tekrarlananlari önler
 
+        //* FILE */
+        //console.log(req.file); //single
+        //console.log(req.files); //array
+
+        if(req.file){
+            req.body.image = req.file.filename
+        }
+
+        //* FILE */
+
+
 
 
         const result = await Pizza.create(req.body)

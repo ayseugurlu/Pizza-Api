@@ -23,6 +23,18 @@ dbConnection();
 
 /*------------------------------------------------------------*/
 
+//& Cross-origin resource sharing (CORS): $ npm i cors
+const cors = require('cors')
+const defaultCorsOptions = {
+    origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    preflightContinue: false,
+    optionsSuccessStatus: 204
+}
+app.use(cors())
+
+/*------------------------------------------------------------*/
+
 //& Middlewares:
 //*Accept JSON:
 app.use(express.json());
@@ -56,6 +68,9 @@ app.all("/", (req, res) => {
     user: req.user,
   });
 });
+
+//* StaticFile:
+app.use('/images', express.static('./uploads'))
 
 /*------------------------------------------------------*/
 
